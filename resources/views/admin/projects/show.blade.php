@@ -12,8 +12,8 @@
     {{-- Flash Message --}}
     <small class="my-1"><strong>Slug</strong>: {{ $project->slug }}</small>
     @if ($project->cover_image)
-        <div class="my-5">
-            <img width="200" src="{{ asset('storage/' . $project->cover_image) }}" alt="">
+        <div class="my-5  pippo">
+            <img width="200" src="{{ asset('storage/' . $project->cover_image) }}" alt="{{ $project->name }}">
         </div>
     @endif
     <div class="my-2"><strong>Made for</strong>: {{ $project->client_name }}</div>
