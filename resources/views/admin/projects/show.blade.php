@@ -17,6 +17,11 @@
         </div>
     @endif
     <div class="my-2"><strong>Made for</strong>: {{ $project->client_name }}</div>
+    @if ($project->type)
+        <div class="my-2"><strong>Project type</strong>: {{ $project->type->name }}</div>
+    @else
+        <div class="my-2"><strong>Project type</strong>: No project type</div>
+    @endif
     @if ($project->summary)
         <p class="my-3"><strong>Summary of this project</strong>: {{ $project->summary }}</p>
     @else

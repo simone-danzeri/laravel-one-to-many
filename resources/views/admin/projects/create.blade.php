@@ -21,11 +21,20 @@
         <div class="mb-3">
             <label for="cover_image" class="form-label">Upload a file</label>
             <input class="form-control" type="file" id="cover_image" name="cover_image">
-          </div>
+        </div>
+        <div class="mb-3">
+            <label for="type_id" class="form-label">Choose a type</label>
+            <select class="form-select" aria-label="Default select example" id="type_id" name="type_id">
+                <option value="">Open this select menu</option>
+                @foreach ($types as $type)
+                    <option @selected($type->id == old('type_id')) value="{{ $type->id }}">{{ $type->name }}</option>
+                @endforeach
+            </select>
+        </div>
         <div class="mb-3">
             <label for="client_name" class="form-label">Client Name</label>
             <input type="text" class="form-control" id="client_name" name="client_name" value="{{ old('client_name') }}">
-          </div>
+        </div>
         <div class="mb-3">
             <label for="summary" class="form-label">Summary</label>
             <textarea class="form-control" id="summary" rows="10" name="summary">{{ old('summary') }}</textarea>
